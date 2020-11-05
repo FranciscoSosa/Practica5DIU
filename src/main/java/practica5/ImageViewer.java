@@ -27,6 +27,8 @@ public class ImageViewer extends javax.swing.JFrame {
         blueCheckBox = new javax.swing.JCheckBox();
         rgbCheckBox = new javax.swing.JCheckBox();
         imagePanel = new practica5.ImagePanel();
+        nameLabel1 = new javax.swing.JLabel();
+        nameLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Visualización de imagen");
@@ -38,7 +40,7 @@ public class ImageViewer extends javax.swing.JFrame {
         colorLabel.setText("Selección color");
 
         logoLabel.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
-        logoLabel.setText("Selección ubicación esquina");
+        logoLabel.setText("Ubicación logo");
 
         logoGroup.add(topLeftRButton);
         topLeftRButton.setText("arriba-izquierda");
@@ -170,15 +172,26 @@ public class ImageViewer extends javax.swing.JFrame {
             .addGap(0, 239, Short.MAX_VALUE)
         );
 
+        nameLabel1.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        nameLabel1.setText("Francisco Jose Santana Sosa");
+
+        nameLabel2.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        nameLabel2.setText("Felipe Santana Hernández");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(configPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(imagePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(nameLabel2)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(configPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nameLabel1))
+                        .addGap(18, 18, 18)
+                        .addComponent(imagePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(32, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -187,8 +200,13 @@ public class ImageViewer extends javax.swing.JFrame {
                 .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(imagePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(configPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(61, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(configPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(nameLabel1)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(nameLabel2)
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         pack();
@@ -298,6 +316,8 @@ public class ImageViewer extends javax.swing.JFrame {
     private practica5.ImagePanel imagePanel;
     private javax.swing.ButtonGroup logoGroup;
     private javax.swing.JLabel logoLabel;
+    private javax.swing.JLabel nameLabel1;
+    private javax.swing.JLabel nameLabel2;
     private javax.swing.JCheckBox redCheckBox;
     private javax.swing.JCheckBox rgbCheckBox;
     private javax.swing.ButtonGroup rgbGroup;
